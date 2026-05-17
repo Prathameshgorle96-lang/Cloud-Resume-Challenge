@@ -1,0 +1,248 @@
+/* ============================================================
+   Cloud Resume Challenge — style.css  (Step 3: CSS)
+   ============================================================ */
+
+/* --- Reset & base ----------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0f1117;
+  --surface:   #1a1d2e;
+  --border:    #2a2d3e;
+  --accent:    #6c63ff;
+  --accent2:   #00d4aa;
+  --text:      #e2e8f0;
+  --muted:     #8892a4;
+  --tag-bg:    rgba(108,99,255,0.15);
+  --radius:    12px;
+  --shadow:    0 4px 24px rgba(0,0,0,0.4);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* --- Layout ----------------------------------------------- */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* --- Header ----------------------------------------------- */
+.header {
+  text-align: center;
+  padding: 48px 32px;
+  background: linear-gradient(135deg, #1a1d2e 0%, #0f1117 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: -60px; left: -60px;
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, rgba(108,99,255,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.header h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 30%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.tagline {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 16px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.contact-links a {
+  color: var(--accent2);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.contact-links a:hover { opacity: 0.75; }
+
+.visitor-counter {
+  margin-top: 20px;
+  display: inline-block;
+  background: var(--tag-bg);
+  border: 1px solid rgba(108,99,255,0.3);
+  border-radius: 24px;
+  padding: 6px 20px;
+  font-size: 0.88rem;
+  color: var(--accent);
+}
+
+#counter {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* --- Sections --------------------------------------------- */
+.section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+}
+
+.section h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.section p { color: var(--muted); font-size: 0.97rem; }
+
+/* --- Skills grid ------------------------------------------ */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.skill-group h3 {
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent2);
+  margin-bottom: 10px;
+}
+
+.skill-group ul {
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 2;
+}
+
+/* --- Project cards ---------------------------------------- */
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: border-color 0.25s, transform 0.2s;
+  background: rgba(255,255,255,0.02);
+}
+.project-card:last-child { margin-bottom: 0; }
+.project-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.project-header h3 { font-size: 1.05rem; color: var(--text); }
+
+.project-tag {
+  font-size: 0.75rem;
+  background: var(--tag-bg);
+  color: var(--accent);
+  border: 1px solid rgba(108,99,255,0.3);
+  border-radius: 12px;
+  padding: 2px 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-highlights {
+  list-style: none;
+  margin: 14px 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.project-highlights li::before {
+  content: '✓  ';
+  color: var(--accent2);
+  font-weight: 700;
+}
+.project-highlights li { margin-bottom: 4px; }
+
+.tech-stack {
+  margin-top: 14px;
+  font-size: 0.8rem;
+  color: var(--accent2);
+  background: rgba(0,212,170,0.08);
+  border: 1px solid rgba(0,212,170,0.2);
+  border-radius: 8px;
+  padding: 8px 14px;
+  letter-spacing: 0.3px;
+}
+
+/* --- Education -------------------------------------------- */
+.education-item { color: var(--muted); font-size: 0.95rem; }
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.edu-header strong { color: var(--text); }
+
+/* --- Certifications --------------------------------------- */
+.section ul {
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 2.2;
+}
+
+/* --- Footer ----------------------------------------------- */
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  opacity: 0.6;
+}
+
+/* --- Responsive ------------------------------------------- */
+@media (max-width: 600px) {
+  .container { padding: 20px 16px 60px; }
+  .section { padding: 22px 18px; }
+  .project-card { padding: 18px; }
+  .skills-grid { grid-template-columns: 1fr; }
+}

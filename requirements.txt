@@ -1,0 +1,10 @@
+# Cloud Resume Challenge — backend/requirements.txt  (Step 11: dependencies)
+# Install with:  pip install -r backend/requirements.txt
+
+# ── Runtime (included in Lambda runtime, but needed locally) ──────────────
+boto3>=1.34.0
+
+# ── Testing ───────────────────────────────────────────────────────────────
+pytest>=8.0.0
+moto[dynamodb]>=5.0.0       # AWS mock library — mocks DynamoDB in tests
+pytest-cov>=5.0.0           # optional: coverage reports

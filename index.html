@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prathamesh Gorle — Cloud Resume</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>Prathamesh Gorle</h1>
+      <p class="tagline">Cloud Engineer · AWS · Infrastructure as Code</p>
+      <div class="contact-links">
+        <a href="mailto:prathamesh@example.com">prathamesh@example.com</a>
+        <span>|</span>
+        <a href="https://linkedin.com/in/prathamesh-gorle" target="_blank">LinkedIn</a>
+        <span>|</span>
+        <a href="https://github.com/prathamesh-gorle" target="_blank">GitHub</a>
+        <span>|</span>
+        <span>Aurangabad, Maharashtra</span>
+      </div>
+      <div class="visitor-counter">
+        👁️ This page has been viewed <span id="counter">...</span> times
+      </div>
+    </header>
+
+    <!-- Summary -->
+    <section class="section">
+      <h2>Summary</h2>
+      <p>
+        Aspiring Cloud Engineer with hands-on experience building and deploying cloud-native
+        solutions on AWS. Completed the Cloud Resume Challenge with a fully serverless,
+        IaC-managed architecture. Passionate about automation, security, and scalable systems.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section class="section">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>AWS Services</h3>
+          <ul>
+            <li>S3 · CloudFront · Route 53 · ACM</li>
+            <li>Lambda · API Gateway · DynamoDB</li>
+            <li>IAM · CloudWatch · EC2</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>IaC & DevOps</h3>
+          <ul>
+            <li>Terraform (modules, remote state)</li>
+            <li>GitHub Actions (CI/CD pipelines)</li>
+            <li>AWS CLI · Git · Docker basics</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <ul>
+            <li>Python (boto3, pytest, moto)</li>
+            <li>JavaScript (Fetch API)</li>
+            <li>HTML · CSS · Bash</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section">
+      <h2>Projects</h2>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3>☁️ Cloud Resume Challenge</h3>
+          <span class="project-tag">Live Project</span>
+        </div>
+        <p>
+          End-to-end serverless resume hosted on AWS — covering all 16 challenge steps.
+          Built with a static frontend served via S3 + CloudFront + Route 53 with ACM TLS,
+          a Python Lambda visitor counter backed by DynamoDB, and full infrastructure
+          managed by Terraform with OIDC-authenticated GitHub Actions CI/CD pipelines.
+        </p>
+        <ul class="project-highlights">
+          <li>OIDC auth — no long-lived AWS keys stored in GitHub</li>
+          <li>Terraform remote state in S3 with DynamoDB locking</li>
+          <li>5 unit tests using pytest + moto (mock AWS)</li>
+          <li>Separate CI/CD pipelines for frontend and backend</li>
+        </ul>
+        <div class="tech-stack">
+          S3 · CloudFront · Route 53 · ACM · Lambda · API Gateway · DynamoDB · Terraform · GitHub Actions
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <h3>🔒 Secure Static Website on AWS</h3>
+          <span class="project-tag">AWS Project</span>
+        </div>
+        <p>
+          Deployed a secure, globally distributed static website using S3 for object storage,
+          CloudFront as CDN, ACM for SSL/TLS, and Route 53 for custom domain management.
+          Implemented strict S3 bucket policies to block all direct public access.
+        </p>
+        <div class="tech-stack">S3 · CloudFront · ACM · Route 53 · IAM</div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2>Education</h2>
+      <div class="education-item">
+        <div class="edu-header">
+          <strong>[Your College Name]</strong>
+          <span>[Graduation Year]</span>
+        </div>
+        <p>Bachelor of Engineering — [Your Branch]</p>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section">
+      <h2>Certifications</h2>
+      <ul>
+        <li>☁️ AWS Cloud Practitioner <em>(or add your actual cert)</em></li>
+        <li>🏆 Cloud Resume Challenge — Completed</li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <p>Built with HTML · CSS · JavaScript · AWS · Terraform | Cloud Resume Challenge</p>
+    </footer>
+  </div>
+
+  <script src="counter.js"></script>
+</body>
+</html>
